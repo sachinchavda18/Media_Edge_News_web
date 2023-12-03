@@ -2,7 +2,8 @@ let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector("#navbar");
 let search = document.querySelector("#search-form");
 let modes = document.querySelector("#mode");
-const backend_url = "http://localhost:3000/";
+const backend_url =
+  "https://news-backend-rtpv.onrender.com" || "http://localhost:3000/";
 modes.onclick = () => {
   modes.classList.toggle("fa-sun");
 };
@@ -240,7 +241,7 @@ function displayNews() {
     col.className = " card";
 
     var card = document.createElement("div");
-    card.className = "para";   
+    card.className = "para";
 
     var image = document.createElement("img");
     image.className = "newsImg";
