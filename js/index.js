@@ -3,7 +3,7 @@ let navbar = document.querySelector("#navbar");
 let search = document.querySelector("#search-form");
 let modes = document.querySelector("#mode");
 const backend_url =
-  "https://news-backend-rtpv.onrender.com" || "http://localhost:3000/";
+  "https://news-backend-rtpv.onrender.com" || "http://localhost:3000";
 modes.onclick = () => {
   modes.classList.toggle("fa-sun");
 };
@@ -60,18 +60,6 @@ var newsDataArr = [];
 
 // apis
 const API_KEY = "a72388c8cf0b4cfda52ae93316344f93";
-const HEADLINES_NEWS =
-  "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
-const GENERAL_NEWS =
-  "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
-const BUSINESS_NEWS =
-  "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=";
-const SPORTS_NEWS =
-  "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=";
-const TECHNOLOGY_NEWS =
-  "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=8&apiKey=";
-const ENTERTAINMENT_NEWS =
-  "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=";
 const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 
 genralBtn.addEventListener("click", function () {
@@ -105,7 +93,7 @@ searchBtn.addEventListener("click", function () {
 });
 
 const fetchHeadlines = async () => {
-  const response = await fetch(backend_url + "news/headlines");
+  const response = await fetch(backend_url + "/news/headlines");
   newsDataArr = [];
   if (response.status >= 200 && response.status < 300) {
     const myJson = await response.json();
@@ -121,7 +109,7 @@ const fetchHeadlines = async () => {
 };
 
 const fetchGeneralNews = async () => {
-  const response = await fetch(backend_url + "news/general");
+  const response = await fetch(backend_url + "/news/general");
   newsDataArr = [];
   if (response.status >= 200 && response.status < 300) {
     const myJson = await response.json();
@@ -137,7 +125,7 @@ const fetchGeneralNews = async () => {
 };
 
 const fetchBusinessNews = async () => {
-  const response = await fetch(backend_url + "news/business");
+  const response = await fetch(backend_url + "/news/business");
   newsDataArr = [];
   if (response.status >= 200 && response.status < 300) {
     const myJson = await response.json();
@@ -153,7 +141,7 @@ const fetchBusinessNews = async () => {
 };
 
 const fetchSportsNews = async () => {
-  const response = await fetch(backend_url + "news/sports");
+  const response = await fetch(backend_url + "/news/sports");
   newsDataArr = [];
   if (response.status >= 200 && response.status < 300) {
     const myJson = await response.json();
@@ -169,7 +157,7 @@ const fetchSportsNews = async () => {
 };
 
 const fetchTechnologyNews = async () => {
-  const response = await fetch(backend_url + "news/tech");
+  const response = await fetch(backend_url + "/news/tech");
   newsDataArr = [];
   if (response.status >= 200 && response.status < 300) {
     const myJson = await response.json();
@@ -185,7 +173,7 @@ const fetchTechnologyNews = async () => {
 };
 
 const fetchEntertainmentNews = async () => {
-  const response = await fetch(backend_url + "news/entertainment");
+  const response = await fetch(backend_url + "/news/entertainment");
   newsDataArr = [];
   if (response.status >= 200 && response.status < 300) {
     const myJson = await response.json();
